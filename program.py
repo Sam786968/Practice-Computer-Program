@@ -1,13 +1,19 @@
-def he_has_jokes():
+punchlines = ["Calder police- I've been robbed! ", "You are welcome! " , "Nevermind, it's pointless! "  ]
+
+def he_has_jokes(*args):
+  indent = "\n ----------------- \n"
   print("Welcome to the knock knock joke library")
+  print(indent)
   joke = input("Do you want to hear a joke? (Yes or No) \n")
+  print(indent)
   question = input("Do you want to hear a joke about robbers, tanks , or pencils? " )
-  punchlines = ["Calder police- I've been robbed! ", "You are welcome! " , "Nevermind, it's pointless! "  ]
+  print(indent)
+
   if joke == "no":
    print("Okay suit yourself")
   while (joke == "yes"):
     print("Great, Lets Play")
-    he_actually_has_the_jokes(question, punchlines)
+    he_actually_has_the_jokes(question, *args)
     joke = input("Do you want to hear another joke or are you finished? ")
   if joke == "finished":
      rate = int(input("Please rate our game 1-10! "))
@@ -20,9 +26,9 @@ def he_has_jokes():
      else:
        print("Sorry you did not enjoy it. ")
   else:
-    he_actually_has_the_jokes()
+    he_actually_has_the_jokes(question, *args)
 
-def he_actually_has_the_jokes(question,punchlines):
+def he_actually_has_the_jokes(question,*args):
   punchlines = ["Calder police- I've been robbed! ", "You are welcome! " , "Nevermind, it's pointless! "]
   input("Knock Knock ")
   if question == "robbers":
